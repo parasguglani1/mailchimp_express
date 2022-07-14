@@ -11,7 +11,7 @@ var MailChimp = (function() {
 
   this.key = process.env.MAILCHIMP_API;
   this.listid = process.env.MAILCHIMP_LISTID;
-  const url = `https://us8.api.mailchimp.com/3.0/lists/${this.listid}`;
+  const url = `https://us12.api.mailchimp.com/3.0/lists/${this.listid}`;
   const options = {
     method: 'POST',
     auth: `user:${this.key}`
@@ -59,7 +59,7 @@ var MailChimp = (function() {
   this.update = function(vars) {
     console.log("MAILCHIMP update() called with " + JSON.stringify(vars));
 
-    const this_url = `https://us8.api.mailchimp.com/3.0/lists/${this.listid}/members/${md5(vars.email)}`;
+    const this_url = `https://us12.api.mailchimp.com/3.0/lists/${this.listid}/members/${md5(vars.email)}`;
     const this_options = {
       method: 'PATCH',
       auth: `user:${this.key}`
